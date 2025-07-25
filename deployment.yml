@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jenkins-web
+  name: static-web
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: jenkins-web
+      app: static-web
   template:
     metadata:
       labels:
-        app: jenkins-web
+        app: static-web
     spec:
       containers:
-        - name: jenkinswebapp
+        - name: static
           image: lokeshpatil03/staticweb-apache
           ports:
             - containerPort: 80
